@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'LandingPageController@index' )->name ('landing-page');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
